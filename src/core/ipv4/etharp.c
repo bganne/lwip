@@ -421,8 +421,8 @@ etharp_find_entry(const ip4_addr_t *ipaddr, u8_t flags, struct netif* netif)
  *
  * @see pbuf_free()
  */
-static err_t
-etharp_update_arp_entry(struct netif *netif, const ip4_addr_t *ipaddr, struct eth_addr *ethaddr, u8_t flags)
+err_t
+etharp_update_arp_entry(struct netif *netif, const ip4_addr_t *ipaddr, const struct eth_addr *ethaddr, u8_t flags)
 {
   s8_t i;
   LWIP_ASSERT("netif->hwaddr_len == ETH_HWADDR_LEN", netif->hwaddr_len == ETH_HWADDR_LEN);
